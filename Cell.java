@@ -1,12 +1,12 @@
 
 public class Cell {
 	private boolean occupied;
-	private String symbol;
+	private char symbol;
 	
 	public Cell() {
 		//Default Settings
 		this.occupied = false;
-		this.symbol = "#";
+		this.symbol = '#';
 	}
 
 	public boolean isOccupied() {
@@ -17,11 +17,11 @@ public class Cell {
 		this.occupied = occupied;
 	}
 
-	public String getSymbol() {
+	public char getSymbol() {
 		return symbol;
 	}
 
-	public void setSymbol(String symbol) {
+	public void setSymbol(char symbol) {
 		this.symbol = symbol;
 	}
 }
