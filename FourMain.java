@@ -22,8 +22,8 @@ public class FourMain {
 			System.out.println("========= End of Round " + round + " ==========");
 		}
 		
-		if(turn == 1) System.out.println("P2 wins");
-		else 		  System.out.println("P1 wins");
+		if(turn == 1) System.out.println("[SYSTEM MESSAGE] P2 wins");
+		else 		  System.out.println("[SYSTEM MESSAGE] P1 wins");
 		displayBoard();
 	}
 	
