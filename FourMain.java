@@ -19,9 +19,7 @@ public class FourMain {
 			displayTurnMessage();	
 			switchTurn();
 			round++;
-			displayBoard();
 			System.out.println("========= End of Round " + round + " ==========");
-			//superHACK();
 		}
 		
 		if(turn == 1) System.out.println("P2 wins");
@@ -54,14 +52,12 @@ public class FourMain {
 		if(turn == 1) { 
 			System.out.println("Enter a col # (P1) : ");
 			if(!insertToBoard(scn.nextInt(),1)) {
-				System.out.println("Column Full.");
 				displayTurnMessage();
 			}
 		}
 		else {
 			System.out.println("Enter a col # (P2) : ");
 			if(!insertToBoard(scn.nextInt(),2)) {
-				System.out.println("Column Full.");
 				displayTurnMessage();
 			}
 		}
@@ -76,6 +72,10 @@ public class FourMain {
 			symbol = p2.getSymbol();
 		}
 		
+		if(col > 6 || col < 0) {
+			System.out.println("Invalid Column Number. Valid Range (1 to 7)");
+			return false;
+		}
 		
 		if(cells[cells.length-1][col-1].getSymbol() == '#') {
 			cells[cells.length-1][col-1].setSymbol(symbol);
@@ -85,6 +85,7 @@ public class FourMain {
 		for(int i=0; i<6; i++) {
 			if(cells[i][col-1].getSymbol() != '#') {
 				if((i-1) < 0) {
+					System.out.println("Column Full.");
 					return false;
 				} else {
 					cells[i-1][col-1].setSymbol(symbol);	
@@ -106,12 +107,12 @@ public class FourMain {
 	}
 	
 	public static boolean checkReverseDiagonal() {
-		for(int row=5; row>0; row--) {
-			for(int col=6; col>0; col--) {
-				if(((row-3) < 0 || (col-3) < 0)) {
+		for(int row=5; row > -1; row--) {
+			for(int col=6; col > -1; col--) {
+				if(((row+3) > 5 || (col-3) < 0)) {
 					break;
 				} else {
-					if(checkMatched(cells[row][col].getSymbol(), cells[row-1][col-1].getSymbol(), cells[row-2][col-2].getSymbol(), cells[row-3][col-3].getSymbol())) {
+					if(checkMatched(cells[row][col].getSymbol(), cells[row+1][col-1].getSymbol(), cells[row+2][col-2].getSymbol(), cells[row+3][col-3].getSymbol())) {
 						return true;
 					}
 				}
