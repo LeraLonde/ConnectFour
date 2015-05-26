@@ -50,13 +50,15 @@ public class FourMain {
 	
 	public static void displayTurnMessage() {
 		if(turn == 1) { 
-			System.out.println("Enter a col # (P1) : ");
+			System.out.print("Enter a col # (P1) : ");
+			System.out.println();
 			if(!insertToBoard(scn.nextInt(),1)) {
 				displayTurnMessage();
 			}
 		}
 		else {
-			System.out.println("Enter a col # (P2) : ");
+			System.out.print("Enter a col # (P2) : ");
+			System.out.println();
 			if(!insertToBoard(scn.nextInt(),2)) {
 				displayTurnMessage();
 			}
