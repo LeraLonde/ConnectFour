@@ -41,7 +41,11 @@ public class FourMain {
 		String output = "1 2 3 4 5 6 7\n";
 		for(int i=0; i<cells.length; i++) {
 			for(int j=0; j<cells[i].length; j++) {
-				output += cells[i][j].getSymbol() + " ";
+				if(cells[i][j].getSymbol() == '#') {
+					output += "  ";
+				} else {
+					output += cells[i][j].getSymbol() + " ";
+				}
 			}
 			output += "\n";
 		}
@@ -51,14 +55,12 @@ public class FourMain {
 	public static void displayTurnMessage() {
 		if(turn == 1) { 
 			System.out.print("Enter a col # (P1) : ");
-			System.out.println();
 			if(!insertToBoard(scn.nextInt(),1)) {
 				displayTurnMessage();
 			}
 		}
 		else {
 			System.out.print("Enter a col # (P2) : ");
-			System.out.println();
 			if(!insertToBoard(scn.nextInt(),2)) {
 				displayTurnMessage();
 			}
