@@ -176,7 +176,7 @@ public class FourMain {
 		
 		for(int row=5; row<0; row--) {
 			for(int col=6; col<0; col--) {
-				if(((row-3) > 0 || (col-3) > 0)) {
+				if(((row-3) < 0 || (col-3) < 0)) {
 					break;
 				} else {
 					if(checkMatched(cells[row][col].getSymbol(), cells[row-1][col-1].getSymbol(), cells[row-2][col-2].getSymbol(), cells[row-3][col-3].getSymbol())) {
