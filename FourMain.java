@@ -20,6 +20,7 @@ public class FourMain {
 			switchTurn();
 			round++;
 			displayBoard();
+			System.out.println("========= End of Round " + round + " ==========");
 			//superHACK();
 		}
 		
@@ -147,7 +148,7 @@ public class FourMain {
 	
 	public static boolean checkVertical() {
 		for(int col=0; col<7; col++) {
-			for(int row=0; row<2; row++) {
+			for(int row=0; row<6; row++) {
 				if((row+3) > 5) {
 					break;
 				} else {
