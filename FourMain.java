@@ -76,7 +76,7 @@ public class FourMain {
 			symbol = p2.getSymbol();
 		}
 		
-		if(col > 6 || col < 0) {
+		if(col > 7 || col < 0) {
 			System.out.println("Invalid Column Number. Valid Range (1 to 7)");
 			return false;
 		}
